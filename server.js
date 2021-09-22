@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const { PORT, mongoUri } = require("./config");
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
