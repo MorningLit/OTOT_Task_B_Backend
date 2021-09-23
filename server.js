@@ -16,8 +16,9 @@ mongoose
   .then(() => console.log("mongodb connected"))
   .catch((err) => console.log(err));
 
-app.use(cors());
+app.user(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 app.use("/api/tasks", taskRoutes);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
