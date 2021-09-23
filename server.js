@@ -6,7 +6,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const taskRoutes = require("./routes/api/Tasks");
-const path = require("path");
 
 mongoose
   .connect(mongoUri, {
@@ -18,6 +17,7 @@ mongoose
   .then(() => console.log("mongodb connected"))
   .catch((err) => console.log(err));
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/tasks", taskRoutes);
 
